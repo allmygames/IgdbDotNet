@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - master # Default release branch
-      - feature/nuget-publish
     pull_request:
 jobs:
   build:
@@ -19,7 +18,7 @@ jobs:
         run: dotnet test
   publish:
     # Only run this job on master
-    # if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master'
     
     name: Publish to NuGet
     runs-on: ubuntu-latest
