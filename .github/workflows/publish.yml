@@ -19,7 +19,7 @@ jobs:
         run: dotnet test
   publish:
     # Only run this job on master
-    if: github.ref == 'refs/heads/master'
+    # if: github.ref == 'refs/heads/master'
     
     name: Publish to NuGet
     runs-on: ubuntu-latest
