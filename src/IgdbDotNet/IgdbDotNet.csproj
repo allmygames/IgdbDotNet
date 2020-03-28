@@ -4,6 +4,11 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <CodeAnalysisRuleSet>.ruleset</CodeAnalysisRuleSet>
     <NeutralLanguage>en-US</NeutralLanguage>
+    <Description>.NET API client for IGDB</Description>
+    <Copyright>Matthew Chartier 2020</Copyright>
+    <PackageProjectUrl>https://github.com/allmygames/IgdbDotNet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/allmygames/IgdbDotNet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
