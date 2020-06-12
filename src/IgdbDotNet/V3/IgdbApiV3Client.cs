@@ -79,7 +79,7 @@ namespace IgdbDotNet.V3
                 var request = new RestRequest(endpoint).AddQueryParameter("fields", fields)
                     .AddQueryParameter("limit", $"{MaxLimit}").AddQueryParameter("offset", $"{offset}");
 
-                var response = await this.BuildRestClient().ExecuteGetTaskAsync<List<T>>(request);
+                var response = await this.BuildRestClient().ExecuteGetAsync<List<T>>(request);
                 if (!response.IsSuccessful)
                 {
                     return null;
@@ -149,7 +149,7 @@ namespace IgdbDotNet.V3
             string csvIds = string.Join(",", ids);
             IRestRequest request = new RestRequest($"{endpoint}{csvIds}").AddQueryParameter("fields", fields);
 
-            var response = await this.BuildRestClient().ExecuteGetTaskAsync<IEnumerable<T>>(request);
+            var response = await this.BuildRestClient().ExecuteGetAsync<IEnumerable<T>>(request);
             if (!response.IsSuccessful)
             {
                 this.logger?.LogError($"Failed response from endpoint: {endpoint}.");
@@ -189,7 +189,7 @@ namespace IgdbDotNet.V3
                 request.AddQueryParameter(queryParameter.Key, queryParameter.Value);
             }
 
-            var response = await this.BuildRestClient().ExecuteGetTaskAsync<IEnumerable<T>>(request);
+            var response = await this.BuildRestClient().ExecuteGetAsync<IEnumerable<T>>(request);
             if (!response.IsSuccessful)
             {
                 this.logger?.LogError($"Failed response from endpoint: {endpoint}.");
@@ -220,7 +220,7 @@ namespace IgdbDotNet.V3
                 .AddParameter("limit", numResults)
                 .AddQueryParameter("search", query);
 
-            var response = await this.BuildRestClient().ExecuteGetTaskAsync<IEnumerable<T>>(request);
+            var response = await this.BuildRestClient().ExecuteGetAsync<IEnumerable<T>>(request);
             if (!response.IsSuccessful)
             {
                 this.logger?.LogError($"Failed response from endpoint: {endpoint}.");
